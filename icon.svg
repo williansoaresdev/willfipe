@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="willfipe">
+  <rect width="512" height="512" fill="#0f172a" />
+  <text
+    x="256"
+    y="285"
+    text-anchor="middle"
+    font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+    font-weight="800"
+    font-size="150"
+    fill="#22c55e"
+  >FIPE</text>
+  <text
+    x="256"
+    y="345"
+    text-anchor="middle"
+    font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+    font-weight="600"
+    font-size="46"
+    fill="#e6edf7"
+  >R$</text>
+</svg>

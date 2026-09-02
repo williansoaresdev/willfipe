@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="description" content="Consulta a tabela FIPE de carros, motos e caminhões." />
+  <title>willfipe — Consulta FIPE</title>
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="./icon.svg" />
+  <link rel="apple-touch-icon" href="./icon.svg" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <img
+      class="hero-image"
+      src="./assets/img_carro.png"
+      alt="Ilustração de um carro"
+      width="770"
+      height="631"
+    />
+    <h1>willfipe</h1>
+    <p class="subtitle">Consulta a tabela FIPE de veículos</p>
+  </header>
+
+  <main class="app-main">
+    <section class="card quick-search-section" aria-label="Busca rápida">
+      <label for="quickSearch">Busca rápida</label>
+      <input
+        type="text"
+        id="quickSearch"
+        placeholder="Digite a marca ou o modelo, ex: Civic, Fiesta, Fazer..."
+        autocomplete="off"
+      />
+      <ul id="quickSearchResults" class="quick-search-results" hidden></ul>
+    </section>
+
+    <section class="card cascade-section" aria-label="Busca guiada">
+      <div class="field">
+        <label for="typeSelect">Tipo</label>
+        <select id="typeSelect"></select>
+      </div>
+
+      <div class="field">
+        <label for="brandSelect">Marca</label>
+        <select id="brandSelect" disabled>
+          <option value="">Carregando...</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="modelInput">Modelo</label>
+        <input
+          type="text"
+          id="modelInput"
+          list="modelList"
+          placeholder="Selecione uma marca primeiro"
+          autocomplete="off"
+          disabled
+        />
+        <datalist id="modelList"></datalist>
+      </div>
+
+      <div class="field">
+        <label for="yearSelect">Ano / combustível</label>
+        <select id="yearSelect" disabled>
+          <option value="">Selecione um modelo primeiro</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="resultCard" class="card result-card" hidden aria-live="polite">
+      <p class="result-label">Valor de referência</p>
+      <p class="result-price" id="resultPrice"></p>
+      <h2 id="resultTitle"></h2>
+      <dl class="result-details">
+        <div>
+          <dt>Marca</dt>
+          <dd id="resultBrand"></dd>
+        </div>
+        <div>
+          <dt>Ano modelo</dt>
+          <dd id="resultYear"></dd>
+        </div>
+        <div>
+          <dt>Combustível</dt>
+          <dd id="resultFuel"></dd>
+        </div>
+        <div>
+          <dt>Código FIPE</dt>
+          <dd id="resultFipe"></dd>
+        </div>
+      </dl>
+    </section>
+
+    <p id="emptyState" class="empty-state">
+      Escolha o tipo, a marca, o modelo e o ano para ver o preço.
+    </p>
+  </main>
+
+  <footer class="app-footer">
+    <p id="referenceMonth"></p>
+    <p class="disclaimer">
+      Dados de referência da tabela FIPE. Valores meramente informativos.
+    </p>
+  </footer>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
