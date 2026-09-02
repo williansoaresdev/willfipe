@@ -1,4 +1,4 @@
-const CACHE_NAME = "willfipe-v1";
+const CACHE_NAME = "willfipe-v2";
 
 const APP_SHELL = [
   "./",
