@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0f172a" />
   <meta name="description" content="Consulta a tabela FIPE de carros, motos e caminhões." />
-  <title>willfipe — Consulta FIPE</title>
+  <title data-i18n="pageTitle">willfipe — Consulta FIPE</title>
 
   <link rel="canonical" href="https://williansoaresdev.github.io/willfipe/" />
 
@@ -32,44 +32,53 @@
 </head>
 <body>
   <header class="app-header">
+    <div class="lang-switcher">
+      <button type="button" id="langButton" class="lang-button" aria-haspopup="true" aria-expanded="false" aria-label="Idioma" data-i18n-aria="languageLabel">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span id="langCurrent">PT</span>
+      </button>
+      <ul id="langMenu" class="lang-menu" hidden></ul>
+    </div>
     <img
       class="hero-image"
       src="./assets/img_carro.png"
       alt="Ilustração de um carro"
+      data-i18n-alt="heroAlt"
       width="770"
       height="631"
     />
     <h1>willfipe</h1>
-    <p class="subtitle">Consulta a tabela FIPE de veículos</p>
+    <p class="subtitle" data-i18n="subtitle">Consulta a tabela FIPE de veículos</p>
   </header>
 
   <main class="app-main">
-    <section class="card quick-search-section" aria-label="Busca rápida">
-      <label for="quickSearch">Busca rápida</label>
+    <section class="card quick-search-section" aria-label="Busca rápida" data-i18n-aria="quickSearch">
+      <label for="quickSearch" data-i18n="quickSearch">Busca rápida</label>
       <input
         type="text"
         id="quickSearch"
+        data-i18n-placeholder="quickSearchPlaceholder"
         placeholder="Digite a marca ou o modelo, ex: Civic, Fiesta, Fazer..."
         autocomplete="off"
       />
       <ul id="quickSearchResults" class="quick-search-results" hidden></ul>
     </section>
 
-    <section class="card cascade-section" aria-label="Busca guiada">
+    <section class="card cascade-section" aria-label="Busca guiada" data-i18n-aria="guidedSearch">
       <div class="field">
-        <label for="typeSelect">Tipo</label>
+        <label for="typeSelect" data-i18n="type">Tipo</label>
         <select id="typeSelect"></select>
       </div>
 
       <div class="field">
-        <label for="brandSelect">Marca</label>
+        <label for="brandSelect" data-i18n="brand">Marca</label>
         <select id="brandSelect" disabled>
           <option value="">Carregando...</option>
         </select>
       </div>
 
       <div class="field">
-        <label for="modelInput">Modelo</label>
+        <label for="modelInput" data-i18n="model">Modelo</label>
         <input
           type="text"
           id="modelInput"
@@ -82,7 +91,7 @@
       </div>
 
       <div class="field">
-        <label for="yearSelect">Ano / combustível</label>
+        <label for="yearSelect" data-i18n="yearFuel">Ano / combustível</label>
         <select id="yearSelect" disabled>
           <option value="">Selecione um modelo primeiro</option>
         </select>
@@ -90,37 +99,37 @@
     </section>
 
     <section id="resultCard" class="card result-card" hidden aria-live="polite">
-      <p class="result-label">Valor de referência</p>
+      <p class="result-label" data-i18n="referenceValue">Valor de referência</p>
       <p class="result-price" id="resultPrice"></p>
       <h2 id="resultTitle"></h2>
       <dl class="result-details">
         <div>
-          <dt>Marca</dt>
+          <dt data-i18n="brand">Marca</dt>
           <dd id="resultBrand"></dd>
         </div>
         <div>
-          <dt>Ano modelo</dt>
+          <dt data-i18n="modelYear">Ano modelo</dt>
           <dd id="resultYear"></dd>
         </div>
         <div>
-          <dt>Combustível</dt>
+          <dt data-i18n="fuel">Combustível</dt>
           <dd id="resultFuel"></dd>
         </div>
         <div>
-          <dt>Código FIPE</dt>
+          <dt data-i18n="fipeCode">Código FIPE</dt>
           <dd id="resultFipe"></dd>
         </div>
       </dl>
     </section>
 
-    <p id="emptyState" class="empty-state">
+    <p id="emptyState" class="empty-state" data-i18n="emptyState">
       Escolha o tipo, a marca, o modelo e o ano para ver o preço.
     </p>
   </main>
 
   <footer class="app-footer">
     <p id="referenceMonth"></p>
-    <p class="disclaimer">
+    <p class="disclaimer" data-i18n="disclaimer">
       Dados de referência da tabela FIPE. Valores meramente informativos.
     </p>
   </footer>

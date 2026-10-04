@@ -1,28 +1,22 @@
-const currencyFormatter = new Intl.NumberFormat("pt-BR", {
-  style: "currency",
-  currency: "BRL",
-});
+import { getLanguage, t, translateFuel } from "./i18n.js";
 
 export function formatPrice(value) {
-  return currencyFormatter.format(value);
+  return new Intl.NumberFormat(getLanguage(), {
+    style: "currency",
+    currency: "BRL",
+  }).format(value);
 }
 
 export function formatYearLabel(year) {
-  return year === 32000 ? "0 km" : String(year);
+  return year === 32000 ? t("zeroKm") : String(year);
 }
 
 export function formatYearOption(entry) {
-  return `${formatYearLabel(entry.year)} - ${entry.fuelType}`;
+  return `${formatYearLabel(entry.year)} - ${translateFuel(entry.fuelType)}`;
 }
 
-const TYPE_LABELS = {
-  CAR: "Carro",
-  MOTORCYCLE: "Moto",
-  TRUCK: "Caminhão",
-};
-
 export function formatTypeLabel(type) {
-  return TYPE_LABELS[type] || type;
+  return t(type);
 }
 
 const DIACRITICS_PATTERN = /[̀-ͯ]/g;

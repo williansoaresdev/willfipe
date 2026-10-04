@@ -1,4 +1,4 @@
-const CACHE_NAME = "willfipe-v2";
+const CACHE_NAME = "willfipe-v3";
 
 const APP_SHELL = [
   "./",
@@ -10,6 +10,7 @@ const APP_SHELL = [
   "./js/app.js",
   "./js/dataLoader.js",
   "./js/format.js",
+  "./js/i18n.js",
   "./js/search.js",
   "./data/meta.json",
   "./data/brands/CAR.json",

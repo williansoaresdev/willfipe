@@ -212,3 +212,70 @@ input:focus {
 .app-footer p {
   margin: 2px 0;
 }
+
+.app-header {
+  position: relative;
+}
+
+.lang-switcher {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  text-align: left;
+}
+
+.lang-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lang-button:hover,
+.lang-button:focus-visible {
+  border-color: var(--accent);
+}
+
+.lang-menu {
+  position: absolute;
+  right: 0;
+  z-index: 10;
+  min-width: 180px;
+  margin: 6px 0 0;
+  padding: 4px;
+  list-style: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.lang-menu[hidden] {
+  display: none;
+}
+
+.lang-menu button {
+  width: 100%;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.lang-menu button:hover,
+.lang-menu button[aria-current="true"] {
+  background: var(--bg);
+  font-weight: 600;
+}
